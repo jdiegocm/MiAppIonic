@@ -10,40 +10,42 @@
   <h1 style="margin-left: 10px;">0</h1>
   <hr color="gray" size="30" width="400">
   <table class="calculadora">
-    <tr>
-      <td><button id="a" style="background-color: gray;">CE</button></td>
-      <td><button id="b" style="background-color: gray;">√</button></td>
-      <td><button id="c" style="background-color: gray">%</button></td>
-      <td><button id="borrar" style="background-color: rgb(161, 102, 14);"><ion-icon name="backspace-outline"></ion-icon></button></td>
-    </tr>
+    <ion-grid>
+      <tr>
+        <td><button id="ce" style="background-color: gray;">CE</button></td>
+        <td><button id="raiz" style="background-color: gray;">√</button></td>
+        <td><button id="porc" style="background-color: gray">%</button></td>
+        <td><button id="borrar" style="background-color: rgb(161, 102, 14);"><ion-icon name="backspace-outline"></ion-icon></button></td>
+      </tr>
 
-    <tr>
-      <td><button id="a">7</button></td>
-      <td><button id="b">8</button></td>
-      <td><button id="c">9</button></td>
-      <td><button id="/" style="background-color: rgb(161, 102, 14);">/</button></td>
-    </tr>
+      <tr>
+        <td><ion-button (click)= "numeros()" id="7" [(ngModel)]="num">7</ion-button></td>
+        <td><ion-button (click)= "numeros()" id="8" [(ngModel)]="num">8</ion-button></td>
+        <td><ion-button (click)= "numeros()" id="9" [(ngModel)]="num">9</ion-button></td>
+        <td><button id="/" style="background-color: rgb(161, 102, 14);">/</button></td>
+      </tr>
 
-    <tr>
-      <td><button id="a">4</button></td>
-      <td><button id="b">5</button></td>
-      <td><button id="c">6</button></td>
-      <td><button id="" style="background-color: rgb(161, 102, 14);">X</button></td>
-    </tr>
+      <tr>
+        <td><button id="4">4</button></td>
+        <td><button id="5">5</button></td>
+        <td><button id="6">6</button></td>
+        <td><button id="x" style="background-color: rgb(161, 102, 14);">X</button></td>
+      </tr>
 
-    <tr>
-      <td><button id="a">1</button></td>
-      <td><button id="b">2</button></td>
-      <td><button id="c">3</button></td>
-      <td><button id="-" style="background-color: rgb(161, 102, 14);">-</button></td>
-    </tr>
+      <tr>
+        <td><button id="a">1</button></td>
+        <td><button id="b">2</button></td>
+        <td><button id="c">3</button></td>
+        <td><button id="-" style="background-color: rgb(161, 102, 14);">-</button></td>
+      </tr>
 
-    <tr>
-      <td><button id="a">0</button></td>
-      <td><button id="b"></button></td>
-      <td><button id="c">.</button></td>
-      <td><button id="+" style="background-color: rgb(161, 102, 14);">+</button></td>
-    </tr>
+      <tr>
+        <td><button id="0">0</button></td>
+        <td><button id="b"> </button></td>
+        <td><button id="c">.</button></td>
+        <td><button id="+" style="background-color: rgb(161, 102, 14);">+</button></td>
+      </tr>
+    </ion-grid>
   </table>
 
   <style>
@@ -58,5 +60,6 @@
       font-size: 25px;
       border-radius: 50%;
     }
+    
   </style>
 </ion-content>
