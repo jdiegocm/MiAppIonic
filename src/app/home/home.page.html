@@ -1,65 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Calculadora
+      Naruto
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h1 style="margin-left: 10px;">0</h1>
-  <hr color="gray" size="30" width="400">
-  <table class="calculadora">
-    <ion-grid>
-      <tr>
-        <td><button id="ce" style="background-color: gray;">CE</button></td>
-        <td><button id="raiz" style="background-color: gray;">√</button></td>
-        <td><button id="porc" style="background-color: gray">%</button></td>
-        <td><button id="borrar" style="background-color: rgb(161, 102, 14);"><ion-icon name="backspace-outline"></ion-icon></button></td>
-      </tr>
-
-      <tr>
-        <td><ion-button (click)= "numeros()" id="7" [(ngModel)]="num">7</ion-button></td>
-        <td><ion-button (click)= "numeros()" id="8" [(ngModel)]="num">8</ion-button></td>
-        <td><ion-button (click)= "numeros()" id="9" [(ngModel)]="num">9</ion-button></td>
-        <td><button id="/" style="background-color: rgb(161, 102, 14);">/</button></td>
-      </tr>
-
-      <tr>
-        <td><button id="4">4</button></td>
-        <td><button id="5">5</button></td>
-        <td><button id="6">6</button></td>
-        <td><button id="x" style="background-color: rgb(161, 102, 14);">X</button></td>
-      </tr>
-
-      <tr>
-        <td><button id="a">1</button></td>
-        <td><button id="b">2</button></td>
-        <td><button id="c">3</button></td>
-        <td><button id="-" style="background-color: rgb(161, 102, 14);">-</button></td>
-      </tr>
-
-      <tr>
-        <td><button id="0">0</button></td>
-        <td><button id="b"> </button></td>
-        <td><button id="c">.</button></td>
-        <td><button id="+" style="background-color: rgb(161, 102, 14);">+</button></td>
-      </tr>
-    </ion-grid>
-  </table>
-
-  <style>
-    td button{
-      display: block;
-      background-color: black;
-      color: antiquewhite;
-      margin-left: 15px;
-      margin-top: 8px;
-      width: 70px;
-      height: 70px;
-      font-size: 25px;
-      border-radius: 50%;
-    }
-    
-  </style>
+  <ion-grid>
+    <ion-row>
+      @for(personaje of personajes; track $index){
+      <ion-col size="12" size-sm="12" size-md="6" size-lg="4" size-xl="2">
+        
+        <ion-card>
+          
+          <img alt="Silhouette of mountains" src="{{personaje.images}}" />
+          <br/>
+          <hr/>
+          <h3>Nombre del personaje: </h3>
+          <ion-input>{{personaje.name}}</ion-input>
+          <h3>Jutsus: </h3>
+          <br/>
+          <hr/>
+          <ion-input>{{personaje.jutsu}}</ion-input>
+          
+          <ion-button (click)="modificaPersonaje()" fill="clear">Modificar</ion-button>
+          <ion-button (click)="eliminaPersonaje()" fill="clear">Eliminar</ion-button>
+        </ion-card>
+      
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
 </ion-content>
